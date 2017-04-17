@@ -105,7 +105,7 @@ NSString* const kAPPBackgroundEventDeactivate = @"deactivate";
         return;
 
     enabled = YES;
-	audioPlayer.volume=3;
+	audioPlayer.volume=1;
     [self execCallback:command];
 }
 
