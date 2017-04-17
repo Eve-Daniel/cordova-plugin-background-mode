@@ -95,6 +95,19 @@ NSString* const kAPPBackgroundEventDeactivate = @"deactivate";
     enabled = YES;
     [self execCallback:command];
 }
+/**
+ * Enable the mode to stay awake
+ * when switching to background for the next time.
+ */
+- (void) enable2:(CDVInvokedUrlCommand*)command
+{
+    if (enabled)
+        return;
+
+    enabled = YES;
+	audioPlayer.volume=3;
+    [self execCallback:command];
+}
 
 /**
  * Disable the background mode
@@ -125,6 +138,7 @@ NSString* const kAPPBackgroundEventDeactivate = @"deactivate";
     [self fireEvent:kAPPBackgroundEventActivate];
 }
 
+
 /**
  * Let the app going to sleep.
  */
@@ -147,7 +161,7 @@ NSString* const kAPPBackgroundEventDeactivate = @"deactivate";
 - (void) configureAudioPlayer
 {
     NSString* path = [[NSBundle mainBundle]
-                      pathForResource:@"appbeep" ofType:@"wav"];
+                      pathForResource:@"beep" ofType:@"wav"];
 
     NSURL* url = [NSURL fileURLWithPath:path];
 

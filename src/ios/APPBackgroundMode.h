@@ -31,5 +31,7 @@
 - (void) enable:(CDVInvokedUrlCommand*)command;
 // Deactivate the background mode
 - (void) disable:(CDVInvokedUrlCommand*)command;
+// Activate the background mode with beep
+- (void) enable2:(CDVInvokedUrlCommand*)command;
 
 @end

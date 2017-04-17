@@ -46,6 +46,19 @@ exports.enable = function() {
     cordova.exec(fn, null, 'BackgroundMode', 'enable', []);
 };
 
+exports.enable2 = function() {
+    if (this.isEnabled())
+        return;
+
+    var fn = function() {
+            exports._isEnabled = true;
+            exports.fireEvent('enable');
+        };
+
+    cordova.exec(fn, null, 'BackgroundMode', 'enable2', []);
+};
+
+
 /**
  * Deactivates the background mode. When deactivated the application
  * will not stay awake while in background.
