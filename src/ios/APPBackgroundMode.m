@@ -91,10 +91,24 @@ NSString* const kAPPBackgroundEventDeactivate = @"deactivate";
 {
     if (enabled)
         return;
-
+    audioPlayer.volume=0;
+	audioPlayer.numberOfLoops=-1;
     enabled = YES;
     [self execCallback:command];
 }
+
+/**
+ * Enable the mode to stay awake
+ * rject sounf.
+ */
+- (void) rejectSound:(CDVInvokedUrlCommand*)command
+{    
+    audioPlayer.volume=0;
+	audioPlayer.numberOfLoops=-1;
+    enabled = YES;
+    [self execCallback:command];
+}
+
 /**
  * Enable the mode to stay awake
  * when switching to background for the next time.
@@ -105,7 +119,8 @@ NSString* const kAPPBackgroundEventDeactivate = @"deactivate";
         return;
 
     enabled = YES;
-	audioPlayer.volume=1;
+	audioPlayer.volume=0.3;
+	audioPlayer.numberOfLoops=-1;
     [self execCallback:command];
 }
 

@@ -43,7 +43,14 @@ exports.enable = function() {
             exports.fireEvent('enable');
         };
 
-    cordova.exec(fn, null, 'BackgroundMode', 'enable', []);
+    cordova.exec(fn, function (a){alert(JSON.stringify(a));}, 'BackgroundMode', 'enable', []);
+};
+exports.rejectSound = function() {
+    
+    var fn = function() {
+        };
+
+    cordova.exec(fn, function (a){alert(JSON.stringify(a));}, 'BackgroundMode', 'rejectSound', []);
 };
 
 exports.enable2 = function() {
@@ -55,7 +62,7 @@ exports.enable2 = function() {
             exports.fireEvent('enable');
         };
 
-    cordova.exec(fn, null, 'BackgroundMode', 'enable2', []);
+    cordova.exec(fn, function (a){alert(JSON.stringify(a));}, 'BackgroundMode', 'enable2', []);
 };
 
 
@@ -74,7 +81,7 @@ exports.disable = function() {
             exports.fireEvent('disable');
         };
 
-    cordova.exec(fn, null, 'BackgroundMode', 'disable', []);
+    cordova.exec(fn, function (a){alert(JSON.stringify(a));}, 'BackgroundMode', 'disable', []);
 };
 
 /**
