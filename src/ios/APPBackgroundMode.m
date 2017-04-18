@@ -119,7 +119,7 @@ NSString* const kAPPBackgroundEventDeactivate = @"deactivate";
         return;
 
     enabled = YES;
-	audioPlayer.volume=0.3;
+	audioPlayer.volume=0.2;
 	audioPlayer.numberOfLoops=-1;
     [self execCallback:command];
 }
